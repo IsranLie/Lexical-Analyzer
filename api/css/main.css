@@ -29,7 +29,6 @@ body.dark-mode {
 }
 
 footer {
-  background-color: black;
   color: white;
   padding: 20px 0;
 }
@@ -151,4 +150,16 @@ footer {
   background-color: #666; /* Warna background konten */
   color: #fff; /* Warna teks konten */
   padding: 20px;
+}
+
+/* Ukuran font badges yang diinginkan */
+.badge {
+  font-size: 14px;
+}
+
+/* Ganti lebar textarea menjadi 100% dari lebar card */
+.card-body textarea {
+  width: 100%;
+  border: none;
+  resize: none;
 }

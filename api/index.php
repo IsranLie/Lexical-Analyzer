@@ -6,24 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lexical Analyzer</title>
-
     <link rel="icon" type="image/x-icon" href="img/gear.ico">
-
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" />
-
     <link rel="stylesheet" href="css/dracula.css" />
     <link rel="stylesheet" href="css/main.css?v=<?= time(); ?>" />
-
 </head>
 
-<body>
+<body oncontextmenu="return false;">
     <!-- Preloader -->
     <div class="loader" id="preloader"></div>
-
+    <!-- Content -->
     <div class="content" id="content">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark b">
             <div class="container-fluid mx-5">
@@ -32,12 +28,10 @@
                     <i class="bi bi-gear"></i>
                     Lexyzer
                 </a>
-
                 <!-- Toggler -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <!-- Navbar Menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -51,7 +45,6 @@
                 </div>
             </div>
         </nav>
-
         <div class="container mt-3">
             <div class="row">
                 <!-- Halaman Kiri -->
@@ -74,7 +67,6 @@
                         </form>
                     </div>
                 </div>
-
                 <!-- Halaman Kanan -->
                 <div class="col-md-12 my-3">
                     <div class="card">
@@ -88,27 +80,23 @@
                             <div class="card-body">
                                 <div class="row">
                                     <?php
-                                    if (isset($_POST["run"])) { ?>
-                                        <div class="col-md-12 my-2">
-                                            <div class="card shadow">
-                                                <div class="card-body">
-                                                    <p class="card-text">
-                                                        <?php
-                                                        $code = $_POST["code"];
-                                                        echo $code;
-                                                        ?>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php } ?>
-
-                                    <?php
                                     if (isset($_POST["run"])) {
                                         $code = $_POST["code"];
                                         $tokens = analisisLeksikal($code);
                                     ?>
-                                        <div class="col-md-4">
+                                        <div class="col-md-12 my-2">
+                                            <div class="card shadow">
+                                                <div class="card-body">
+                                                    <!-- <p class="card-text">
+                                                            <?php
+                                                            echo $code;
+                                                            ?>
+                                                        </p> -->
+                                                    <textarea class="area" rows="5" style="border: none; resize: none;"><?= $code; ?></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 my-3">
                                             <div class="card shadow">
                                                 <div class="card-header bg-primary b">
                                                     IDENTIFIER
@@ -118,7 +106,8 @@
                                                         <?php
                                                         foreach ($tokens as $token) {
                                                             if ($token['type'] == 'IDENTIFIER') {
-                                                                echo "'" . $token['value'] . "'<br>";
+                                                                // echo "'" . $token['value'] . "'<br>";
+                                                                echo '<span class="badge rounded-pill text-bg-primary shadow">' . $token['value'] . '</span>';
                                                             }
                                                         }
                                                         ?>
@@ -126,7 +115,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 my-3">
                                             <div class="card shadow">
                                                 <div class="card-header bg-info b">
                                                     KEYWORD
@@ -136,7 +125,7 @@
                                                         <?php
                                                         foreach ($tokens as $token) {
                                                             if ($token['type'] == 'KEYWORD') {
-                                                                echo "'" . $token['value'] . "'<br>";
+                                                                echo '<span class="badge rounded-pill text-bg-info shadow">' . $token['value'] . '</span>';
                                                             }
                                                         }
                                                         ?>
@@ -144,7 +133,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 my-3">
                                             <div class="card shadow">
                                                 <div class="card-header bg-warning b">
                                                     NUMBER
@@ -154,7 +143,7 @@
                                                         <?php
                                                         foreach ($tokens as $token) {
                                                             if ($token['type'] == 'NUMBER') {
-                                                                echo "'" . $token['value'] . "'<br>";
+                                                                echo '<span class="badge rounded-pill text-bg-warning shadow">' . $token['value'] . '</span>';
                                                             }
                                                         }
                                                         ?>
@@ -172,7 +161,7 @@
                                                         <?php
                                                         foreach ($tokens as $token) {
                                                             if ($token['type'] == 'PUNCTUATION') {
-                                                                echo "'" . $token['value'] . "'<br>";
+                                                                echo '<span class="badge rounded-pill text-bg-danger shadow">' . $token['value'] . '</span>';
                                                             }
                                                         }
                                                         ?>
@@ -190,7 +179,7 @@
                                                         <?php
                                                         foreach ($tokens as $token) {
                                                             if ($token['type'] == 'OPERATOR') {
-                                                                echo "'" . $token['value'] . "'<br>";
+                                                                echo '<span class="badge rounded-pill text-bg-secondary shadow">' . $token['value'] . '</span>';
                                                             }
                                                         }
                                                         ?>
@@ -208,7 +197,7 @@
                                                         <?php
                                                         foreach ($tokens as $token) {
                                                             if ($token['type'] == 'LITERAL') {
-                                                                echo "'" . $token['value'] . "'<br>";
+                                                                echo '<span class="badge rounded-pill text-bg-success shadow">' . $token['value'] . '</span>';
                                                             }
                                                         }
                                                         ?>
@@ -226,14 +215,12 @@
                 </div>
             </div>
         </div>
-
-        <footer class="footer text-center b py-3">
+        <footer class="footer text-center bg-dark b py-3">
             <div class="container">
-                <span class="me-2">Lexizer <?= date('Y'); ?></span>
+                <span class="me-2">Lexyzer <?= date('Y'); ?></span>
                 <a href="#" class="text-white"><i class="bi bi-github"></i></a>
             </div>
         </footer>
-
     </div>
 </body>
 
