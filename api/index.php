@@ -420,7 +420,7 @@ function isOperator($char)
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark b">
             <div class="container-fluid mx-5">
                 <!-- Brand -->
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="https://lexyzer.vercel.app">
                     <i class="bi bi-gear"></i>
                     Lexyzer
                 </a>
