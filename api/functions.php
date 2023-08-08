@@ -72,35 +72,20 @@ function analisisLeksikal($input)
 // Fungsi untuk memeriksa apakah kata adalah keyword
 function isKeyword($word)
 {
-    $keywords = ["for", "while", "if", "do", "switch", "case", "echo", "count"];
+    $keywords = ["for", "while", "if", "do", "switch", "case", "echo", "count", "FOR", "WHILE", "IF", "DO", "SWITCH", "CASE", "ECHO", "COUNT"];
     return in_array($word, $keywords);
 }
 
 // Fungsi untuk memeriksa apakah karakter adalah tanda baca
 function isPunctuation($char)
 {
-    $punctuations = [",", ";", "(", ")", "{", "}", "="];
+    $punctuations = [".", ",", ";", ":", "?", "!", "(", ")", "{", "}", "[", "]", " ' ", ' " '];
     return in_array($char, $punctuations);
 }
 
 // Fungsi untuk memeriksa apakah karakter adalah operator
 function isOperator($char)
 {
-    $operators = ["+", "-", "*", "/", "==", "!=", ">=", "<=", "==="];
+    $operators = ["+", "-", "*", "/", "=", "==", "!=", ">=", "<=", "==="];
     return in_array($char, $operators);
-}
-
-// Fungsi untuk mengambil class CSS sesuai dengan type token
-function getClassByType($type)
-{
-    switch ($type) {
-        case 'IDENTIFIER':
-            return 'bg-primary';
-        case 'KEYWORD':
-            return 'bg-success';
-        case 'NUMBER':
-            return 'bg-warning';
-        default:
-            return 'bg-light'; // Atur class default jika tidak ada tipe yang cocok
-    }
 }
