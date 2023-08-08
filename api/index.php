@@ -100,7 +100,7 @@ function isOperator($char)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lexical Analyzer</title>
-    <link rel="icon" type="image/x-icon" href="https://drive.google.com/file/d/1ZCzlK7Cc8JqZCVm3frbibcOsgcuMYm-3/view?usp=sharing">
+    <link rel="icon" type="image/x-icon" href="https://cdn.icon-icons.com/icons2/1264/PNG/512/1496969503-gear_84694.png">
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
