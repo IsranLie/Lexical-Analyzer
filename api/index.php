@@ -87,7 +87,7 @@ function isPunctuation($char)
 // Fungsi untuk memeriksa apakah karakter adalah operator
 function isOperator($char)
 {
-    $operators = ["+", "-", "*", "/", "=", "==", "!=", ">=", "<=", "==="];
+    $operators = ["+", "-", "*", "/", "=", "<", ">", "==", "!=", ">=", "<=", "==="];
     return in_array($char, $operators);
 }
 
