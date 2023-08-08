@@ -488,7 +488,7 @@ function isOperator($char)
                                                             echo $code;
                                                             ?>
                                                         </p> -->
-                                                    <textarea class="area" rows="5" style="border: none; resize: none;"><?= $code; ?></textarea>
+                                                    <textarea class="area" rows="5" style="border: none; resize: none;" readonly><?= $code; ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
