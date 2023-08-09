@@ -432,7 +432,7 @@ function isOperator($char)
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-decoration: none;">Docs</a>
+                            <a class="nav-link" href="#" style="text-decoration: none;" onclick="showAlert()">Docs</a>
                         </li>
                         <li class="nav-item">
                             <button id="darkModeToggle" class="btn btn-dark"><i class="bi bi-moon"></i></button>
@@ -676,6 +676,10 @@ function isOperator($char)
         // Tampilkan konten halaman setelah preloader dihilangkan
         content.style.display = "block";
     });
+
+    function showAlert() {
+        alert("Program oleh: ['Abdullah Tsani Iqomuddin','Silvyani Nurlaila H.F.','I Wayan Widi Pastika','Akhdan Rafly','Oman Subadri','Rian Fahrizal','Fahmi Muhamad Romdoni']");
+    }
 </script>
 
 </html>
