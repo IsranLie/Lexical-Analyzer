@@ -550,7 +550,7 @@ function isOperator($char)
                                         <div class="col-md-4 my-3">
                                             <div class="card shadow">
                                                 <div class="card-header text-white bg-danger b">
-                                                    PUNCTUATION
+                                                    DELIMITER
                                                 </div>
                                                 <div class="card-body">
                                                     <p class="card-text">
