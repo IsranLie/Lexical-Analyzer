@@ -678,7 +678,7 @@ function isOperator($char)
     });
 
     function showAlert() {
-        alert("Program oleh: ['Abdullah Tsani Iqomuddin','Silvyani Nurlaila H.F.','I Wayan Widi Pastika','Akhdan Rafly','Oman Subadri','Rian Fahrizal','Fahmi Muhamad Romdoni']");
+        alert("Program oleh: ['Abdullah Tsani Iqomuddin','Silvyani Nurlaila H.F.','I Wayan Widi P','Akhdan Rafly','Oman Subadri','Rian Fahrizal','Fahmi Muhamad Romdoni']");
     }
 </script>
 
