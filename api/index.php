@@ -614,7 +614,7 @@ function isOperator($char)
         <footer class="footer text-center bg-dark b py-3">
             <div class="container">
                 <span class="me-2">Lexyzer <?= date('Y'); ?></span>
-                <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+                <a href="https://github.com/IsranLie/Lexical-Analyzer.git" class="text-white"><i class="bi bi-github"></i></a>
             </div>
         </footer>
     </div>
